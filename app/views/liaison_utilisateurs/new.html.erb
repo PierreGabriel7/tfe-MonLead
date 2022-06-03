@@ -1,0 +1,16 @@
+              <div class="card-body">
+           
+
+    %>  <%= bootstrap_form_with(model: @liaison, local: true) do |f| %>
+
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+
+
+
+  <%= f.submit "save" %>
+
+<% end %> 
+
+ </div>

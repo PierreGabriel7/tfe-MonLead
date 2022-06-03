@@ -1,0 +1,222 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#  t("controller.error_occured").capitalize + "."
+# en:
+#   'true': 'foo'
+# t("controller.newsletter.error").capitalize + "."
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+
+fr:
+  intermediary:
+    please_complete_account: "veuillez compléter vos informations avant d'accéder aux fonctionnalités de ce site"
+ 
+  controller:
+    error_occured: "une erreur s'est produite. Veuillez contacter l'administrateur"
+      
+    apporteurs:
+      account_saved: "votre compte a bien été sauvegardé"
+      successfully_saved: "a été enregistré"
+       
+    category:
+      categ_added: "ajouté avec succes"
+
+    contracts:
+      created: "le contrat à bien été créé"
+      paid: "le contrat a bien été renseigné comme payé. Il sera maintenant ajouté au portefeuille apporteur"
+      validate: "le contrat a bien été validé. Il sera maintenant visible par l'apporteur"
+      claimed: "vous avez bien réclamé votre contrat. Vous serez bientôt crédité"
+      comission_err: "il y a un souci avec la commission. Veuillez vérifier"
+      amount_err: "il y a un souci avec le montant . Veuillez vérifier"
+
+    manager:
+      added: "a été ajouté avec succès"
+      updated: "a bien été mis à jour"
+      deleted: "a bien été supprimé"
+      created : "a bien été créé"
+
+    newsletter:
+      sent: "votre avatar a été mis à jour"
+      error: "le fichier sélectionné n'est pas une image"
+
+    user_avatar:
+      updated: "votre avatar à été mis à jour"
+      not_img: "le fichier sélectionné n'est pas une image"
+
+    user:
+      updated: "votre profil a été mis à jour"
+      
+
+  mailer:
+    message_sent: "le message a bien été envoyé"
+    message_error: "il y a eu une erreur lors de l'envoie du message"
+    new_mail_from: "vous avez recu un email de la part de"
+    new_manager_availble: "newsletter: un nouveau gestionnaire est disponible"
+    message: "message"
+    from: "de"
+    new_contract: "un contract vous concernant a été créé"
+    the_manager: "le manager"
+    manager_added: "a été ajouté au service MonLead et est désormais disponible à la création de"
+    address: "adresse"
+    contract_val: "valeur totale du contrat"
+    comm_intermediary: "commission apporteur"
+
+  profile:
+    my_profie: "mon profil"
+    my_info: "mes informations"
+    choose_file: "choisir un fichier"
+    brows: "parcourir"
+    details: "détails"
+
+
+  user_types:
+    manager: "gestionnaire"
+    admin: "admin"
+    intermediary: "apporteur d'affaires"
+
+  manager:
+    manager: "gestionnaire"
+    manager_list: "liste des gestionnaires"
+    add_manager: "ajouter un gestionnaire"
+    table:
+      company_name: "entreprise"
+      
+  leads:
+    user: 
+      my_leads: "mes leads"
+    admin:
+      my_leads: "tous les leads"
+    
+    add_lead: "ajouter un lead"
+
+    table:
+      firstname: "prénom"
+      lastname: "nom"
+      email: "email"
+      town: "ville"
+      street: "rue"
+      street_nbr: "numéro de rue"
+      iban: "iban"
+      bic: "bic"
+      options: "options"
+  
+  sidebar:
+    dashborad: "tableau de bord"
+    contract_list: "liste des contrats"
+    contract_add: "ajouter contrat"
+    lead_list: "liste des leads"
+    lead_add: "ajouter un lead"
+    manager_list: "liste des gesionnaires"
+    manager_add: "ajouter un gestionnaire"
+    profile: "profil"
+    show_profile: "voir profil"
+    edit_profile: "modifier profil"
+    new_categ: "ajouter catégorie"
+
+  logged_off_page:
+    must_be: "vous devez vous"
+    connected: "connecter"
+    to_acces: "pour acceder aux fonctionnalités de ce site"
+
+  header:
+    sign_up: "s'enregistrer"
+    sign_in: "se connecter"
+    log_out: "déconnexion"
+    my_account: "mon compte"
+
+
+  breadcrumbs:
+    admin_dashboard: "tableau de bord administrateur"
+    intermediary_dashboard: "tableau de bord apporteur d'affaires"
+    manager_dashboard: "tableau de bord gestionnaire"
+    home: "accueil"
+    new: "nouveau"
+    contracts: "contrats"
+    user_profile: "profil utilisateur"
+    user_edition: "edition du profil"
+
+    
+  page_switcher:
+    next: "suivant"
+    previous: "précédent"
+    show: "affiche"
+    to: "à"
+    onn: "sur"
+    entries: "entrées"
+
+  contracts:
+    admin_contracts: "tous les contrats"
+    my_contracts: "tous mes contrats"
+    choose_category: "choisir une catégorie"
+    choose_lead: "choisir un lead"
+    choose_value: "valeur du contrat"
+    choose_comm: "commission apporteur"
+    choose_comment: "commentaire"
+    category: "catégorie"
+    create_contract: "créer un contrat"
+
+    table:
+      yess: "oui"
+      non: "non"
+      manager: "gestionnaire"
+      lead: "lead"
+      intermediary: "apporteur"
+      type: "type"
+      total: "total"
+      commission: "commission"
+      region: "région"
+      valid: "valide"
+      claimed: "réclamé"
+      claim: "reclamer"
+      validate: "validé"
+      paid: "payé"
+      pay: "payer"
+      profits: "profits"
+      total_received: "montant total perçu"
+      pending_profits: "revenus en attente"
+      total_commission: "valeur totale commissions"
+      total_contrats: "valeur totale des contrats"
+
+    geoloca:
+      localisation: "localisation de"
+
+  actions:
+    email:
+      new_msg_to: "envoyer un message à"
+      recipient: "destinataire"
+      message: "message"
+      close: "fermer"
+      send: "envoyer"
+      create: "créer"
+      edit: "modifier"
+      delete: "supprimer"
+      add: "ajouter"
+      save: "enregistrer"
+
+    search:
+      search_by: "recherche par"
+      contains: "contient"
+      search: "rechercher"

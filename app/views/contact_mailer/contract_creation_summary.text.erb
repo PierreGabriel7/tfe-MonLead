@@ -1,0 +1,14 @@
+<%=t('mailer.new_contract').capitalize %>
+--------------------------
+
+<%=t('profile.details').capitalize %>:
+<%=t('user_types.manager').capitalize %>: <%= params[:company_name] %> 
+<%=t('user_types.intermediary').capitalize %>: <%= params[:apporteur_name] %> 
+<%=t('contracts.table.lead').capitalize %>: <%= params[:lead_name] %> 
+<%=t('contracts.table.region').capitalize %> (<%=t('contracts.table.lead').capitalize %>): <%= params[:region] %>
+
+  
+--------------------------
+
+<%=t('mailer.contract_val').capitalize %>: <%= params[:amount] %>€
+<%=t('mailer.comm_intermediary').capitalize %>: <%= params[:comm] %>€

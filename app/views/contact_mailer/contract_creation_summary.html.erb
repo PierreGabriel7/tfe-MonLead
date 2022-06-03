@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p><%=t('mailer.new_contract').capitalize %></p>
+    --------------------------
+  </p>
+  <p><%=t('profile.details').capitalize %>:</p>
+  <p><%=t('user_types.manager').capitalize %>: <%= params[:company_name] %> </p>
+  <p><%=t('user_types.intermediary').capitalize %>: <%= params[:apporteur_name] %> </p>
+  <p><%=t('contracts.table.lead').capitalize %>: <%= params[:lead_name] %> </p>
+  <p><%=t('contracts.table.region').capitalize %> (<%=t('contracts.table.lead').capitalize %>): <%= params[:region] %></p>
+  <p>
+    <br>
+    --------------------------
+  </p>
+  <p><%=t('mailer.contract_val').capitalize %>: <%= params[:amount] %>€</p>
+  <p><%=t('mailer.comm_intermediary').capitalize %>: <%= params[:comm] %>€</p>
+</body>
+</html>

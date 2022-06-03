@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang=<%=I18n.locale%>>
+  <head>
+    <title>MonLead</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Favicon icon -->
+    <%= favicon_link_tag 'logo-sm.svg' %>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <!-- font css -->
+    <%#<link rel="stylesheet" href="assets/fonts/font-awsome-pro/css/pro.min.css">
+    <link rel="stylesheet" href="assets/fonts/feather.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome.css">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/customizer.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/css/custom.css"> %>
+  </head>
+  <body class="">
+    <%= render 'layouts/header' %>
+    <% if @user_type == 'apporteur'%>
+      <%= render partial: 'app_aff_sidebar' %>
+    <%elsif @user_type == 'administrateur' %>
+      <%= render partial: 'administrateur_sidebar' %>
+    <%elsif @user_type == 'gestionnaire' %>
+      <%= render partial: 'gestionnaire_sidebar' %>
+    <%elsif @is_signed_in == false %>
+      <%= render partial: 'logged_off_sidebar' %>
+    <%end%>
+    <%= yield %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <%# <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/feather.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+    <script src="assets/js/plugins/clipboard.min.js"></script>
+    <script src="assets/js/uikit.min.js"></script> %>
+    <script>
+      // header option
+      $('#pct-toggler').on('click', function() {
+          $('.pct-customizer').toggleClass('active');
+
+      });
+      // header option
+      $('#cust-sidebrand').change(function() {
+          if ($(this).is(":checked")) {
+              $('.theme-color.brand-color').removeClass('d-none');
+              $('.m-header').addClass('bg-dark');
+          } else {
+              $('.m-header').removeClassPrefix('bg-');
+              $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+              $('.theme-color.brand-color').addClass('d-none');
+          }
+      });
+      // Header Color
+      $('.brand-color > a').on('click', function() {
+          var temp = $(this).attr('data-value');
+          // $('.header-color > a').removeClass('active');
+          // $('.pcoded-header').removeClassPrefix('brand-');
+          // $(this).addClass('active');
+          if (temp == "bg-default") {
+              $('.m-header').removeClassPrefix('bg-');
+          } else {
+              $('.m-header').removeClassPrefix('bg-');
+              $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo.svg');
+              $('.m-header').addClass(temp);
+          }
+      });
+      // Header Color
+      $('.header-color > a').on('click', function() {
+          var temp = $(this).attr('data-value');
+          // $('.header-color > a').removeClass('active');
+          // $('.pcoded-header').removeClassPrefix('brand-');
+          // $(this).addClass('active');
+          if (temp == "bg-default") {
+              $('.pc-header').removeClassPrefix('bg-');
+          } else {
+              $('.pc-header').removeClassPrefix('bg-');
+              $('.pc-header').addClass(temp);
+          }
+      });
+      // sidebar option
+      $('#cust-sidebar').change(function() {
+          if ($(this).is(":checked")) {
+              $('.pc-sidebar').addClass('light-sidebar');
+              $('.pc-horizontal .topbar').addClass('light-sidebar');
+              // $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo-dark.svg');
+          } else {
+              $('.pc-sidebar').removeClass('light-sidebar');
+              $('.pc-horizontal .topbar').removeClass('light-sidebar');
+              // $('.m-header > .b-brand > .logo-lg').attr('src', 'assets/images/logo.svg');
+          }
+      });
+      $.fn.removeClassPrefix = function(prefix) {
+          this.each(function(i, it) {
+              var classes = it.className.split(" ").map(function(item) {
+                  return item.indexOf(prefix) === 0 ? "" : item;
+              });
+              it.className = classes.join(" ");
+          });
+          return this;
+      };
+
+      	// Disable index redirection on href="#!" a tags
+      	$('a').click(function(event) {
+          if ($(this).hasClass("no-default-link")) {
+              event.preventDefault();
+          }
+      });
+    </script>
+    <%= javascript_include_tag 'nextrojs/vendor-all.min' %>
+    <%= javascript_include_tag 'nextrojs/feather.min' %>
+    <%= javascript_include_tag 'nextrojs/pcoded' %>
+    <%= javascript_include_tag 'nextrojs/clipboard.min' %>
+    <%= javascript_include_tag 'nextrojs/uikit' %>
+    <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script>
+      $(function() { //run when the DOM is ready
+            $(".map-btn").click(function() {
+            // Remove previously add id attribute to the map div otherwise it can break the map rendering
+            $('.openstreetmap').removeAttr('id');
+
+            // Add id="map" to the div containing the map
+            $(this).next().find('.openstreetmap').attr('id', 'map'); //add the class to the clicked element
+
+            // If map is already randered then don't do it again
+            if (!$(this).next().find('.openstreetmap').hasClass("leaflet-touch")) {
+
+                let long = $("#map").data("long");
+                let lat = $("#map").data("lat");
+
+                //Create map
+                var map = L.map("map").setView([long, lat], 13);
+
+
+                L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: "mapbox/streets-v11",
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: "pk.eyJ1IjoicG9pcmVlNDQ1IiwiYSI6ImNreTc0ZXByMTBta2cyd3BmOGI3dmtleHUifQ.VFnYpRcoYMtQ-fpjxytPNw",
+        }
+                ).addTo(map);
+
+                //Create marker
+                var marker = L.marker([long, lat]).addTo(map);
+
+                //Show the map after the corresping div is fully rendered to avoid partial rendering of map tiles
+                setInterval(function() {
+        map.invalidateSize();
+                }, 100);
+            }
+              });
+
+      });
+    </script>
+  </body>
+</html>

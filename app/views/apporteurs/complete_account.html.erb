@@ -1,0 +1,22 @@
+<%= render partial: 'logged_off_sidebar' %>
+<div class="pc-container">
+  <div class="pcoded-content">
+    <div class="col-md-12">
+      <div class="alert alert-primary text-center" role="alert">
+        <%=t('intermediary.please_complete_account').capitalize%>.
+      </div>
+      <div class="card-body">
+        <%= bootstrap_form_with(model: @app_aff, local: true, url:'complete_account_update') do |f| %>
+          <%= f.text_field :firstname, label: t('leads.table.firstname').capitalize %>
+          <%= f.text_field :lastname, label: t('leads.table.lastname').capitalize %>
+          <%= f.text_field :town, label: t('leads.table.town').capitalize %>
+          <%= f.text_field :street, label: t('leads.table.street').capitalize %>
+          <%= f.text_field :street_nbr, label:  t('leads.table.street_nbr').capitalize %>
+          <%= f.text_field :iban, label: t('leads.table.iban').capitalize %>
+          <%= f.text_field :bic, label: t('leads.table.bic').capitalize %>
+          <%= f.submit class: "btn  btn-primary"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

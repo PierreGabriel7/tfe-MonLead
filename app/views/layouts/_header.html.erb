@@ -1,0 +1,109 @@
+<!-- [ Pre-loader ] start -->
+<div class="loader-bg">
+  <div class="loader-track">
+    <div class="loader-fill"></div>
+  </div>
+</div>
+<!-- [ Pre-loader ] End -->
+<!-- [ Mobile header ] start -->
+<div class="pc-mob-header pc-header">
+  <div class="pcm-logo">
+    <%= image_tag'logo.png',alt:'logo', class: 'logo logo-lg'%>
+  </div>
+  <div class="pcm-toolbar">
+    <a href="#!" class="no-default-link pc-head-link" id="mobile-collapse">
+      <div class="hamburger hamburger--arrowturn">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
+      <!-- <i data-feather="menu"></i> -->
+    </a>
+    <a href="#!" class="no-default-link pc-head-pc-micon" id="header-collapse">
+      <i data-feather="more-vertical"></i>
+    </a>
+  </div>
+</div>
+<!-- [ Header ] start -->
+<%# Check if user is logged or not %>
+<% if (!@is_signed_in) %>
+  <header class="pc-header ">
+    <div class="header-wrapper">
+      <div class="ml-auto">
+        <ul class="list-unstyled">
+          <li class="dropdown pc-h-item">
+            <%= image_tag'user-solid.svg',id:'no-default-link',alt: 'user-image', class: 'user-avtar cst-default-avatar'%>
+            <a class="btn btn-primary  rounded-pill"
+							href="https://userandsocials.auth.eu-west-3.amazoncognito.com/login?response_type=code&client_id=1vibkotm8fqugn9v086iltn8a5&redirect_uri=https://monlead.herokuapp.com/auth/sign_in"
+							role="button"><%= t('header.sign_in').capitalize %></a>
+          </li>
+          <li class="dropdown pc-h-item">
+            <a class="btn btn-link  rounded-pill"
+							href="https://userandsocials.auth.eu-west-3.amazoncognito.com/signup?response_type=code&client_id=1vibkotm8fqugn9v086iltn8a5&redirect_uri=https://monlead.herokuapp.com/auth/sign_in"
+							role="button"><%= t('header.sign_up').capitalize %></a>
+          </li>
+          <div class="dropdown language-picker loggedout">
+            <% if I18n.locale == :fr %>
+              <button class="btn btn-light btn-lg dropdown-toggle" type="button"  data-toggle="dropdown">
+                <img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/fr.svg">Français
+              </button>
+            <% else %>
+              <button class="btn btn-light btn-lg dropdown-toggle" type="button"  data-toggle="dropdown">
+                <img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/gb.svg">English
+              </button>
+            <% end %>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="<%= language_set_fr_path %>"><img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/fr.svg">Français</a>
+              <a class="dropdown-item" href="<%= language_set_en_path %>"><img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/gb.svg">Anglais</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </header>
+<% else %>
+  <header class="pc-header ">
+    <div class="header-wrapper">
+      <div class="ml-auto">
+        <ul class="list-unstyled">
+          <li class="dropdown pc-h-item">
+            <a class="pc-head-link dropdown-toggle arrow-none mr-0" data-toggle="dropdown" href="#"
+							role="button" aria-haspopup="false" aria-expanded="false">
+              <%= image_tag @profile_picture_url, id:'no-default-link',alt: 'user-image', class: 'user-avtar'%>
+              <span>
+                <span class="user-name"><%= @current_user.email %></span>
+                <span class="user-desc"><%= @title %></span>
+              </span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right pc-h-dropdown">
+              <a href="<%= users_show_path %>" class="dropdown-item">
+                <i data-feather="user"></i>
+                <span><%= t('header.my_account').capitalize %></span>
+              </a>
+              <a href="<%= signout_path %>" class="dropdown-item">
+                <i data-feather="power"></i>
+                <span><%= t('header.log_out').capitalize %></span>
+              </a>
+            </div>
+          </li>
+          <div class="dropdown language-picker">
+            <% if I18n.locale == :fr %>
+              <button class="btn btn-light btn-lg dropdown-toggle" type="button"  data-toggle="dropdown">
+                <img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/fr.svg">Français
+              </button>
+            <% else %>
+              <button class="btn btn-light btn-lg dropdown-toggle" type="button"  data-toggle="dropdown">
+                <img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/gb.svg">English
+              </button>
+            <% end %>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="<%= language_set_fr_path %>"><img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/fr.svg">Français</a>
+              <a class="dropdown-item" href="<%= language_set_en_path %>"><img alt='language-picker-ico' src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@master/svg/gb.svg">English</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <%# <a href="<%= signout_path " class="button">Sign Out</a> %>
+<% end %>

@@ -1,0 +1,47 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10">Dashboard apporteur d'affaires</h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">contracts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <div class="row">
+      <div class="card-body">
+        <%= bootstrap_form_with(model: @category, local: true) do |f| %>
+          <%= f.text_field :name, label: "Nom catégorie" %>
+          <%= f.submit class: "btn  btn-primary", value:"Enregistrer"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ breadcrumb ] start -->
+<div class="page-header">
+  <div class="page-block">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="page-header-title">
+          <h5 class="m-b-10">Dashboard admin</h5>
+        </div>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">contracts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ breadcrumb ] end -->
+</div>

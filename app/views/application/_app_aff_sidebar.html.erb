@@ -1,0 +1,38 @@
+<!-- [ navigation menu ] start -->
+<nav class="pc-sidebar ">
+  <div class="navbar-wrapper">
+    <div class="m-header">
+      <a href="<%= root_path %>" class="b-brand">
+        <%= image_tag'logo.png', class: 'logo logo-lg'%>
+        <%= image_tag'logo-sm.svg', alt: 'logo',class: 'logo logo-sm'%>
+      </a>
+    </div>
+    <div class="navbar-content">
+      <ul class="pc-navbar">
+        <li class="pc-item pc-caption">
+          <label>Navigation</label>
+        </li>
+        <li class="pc-item pc-hasmenu">
+          <a href="#!" class="no-default-link pc-link "><span class="pc-micon"><i data-feather="home"></i></span><span
+								class="pc-mtext"><%= t('sidebar.dashborad').capitalize %></span><span class="pc-arrow"><i
+									data-feather="chevron-right"></i></span></a>
+          <ul class="pc-submenu">
+            <li class="pc-item"><%= link_to t('sidebar.contract_list').capitalize, "/contracts", class: "pc-link" %></li>
+            <li class="pc-item"><%= link_to t('sidebar.lead_list').capitalize, "/leads", class: "pc-link" %> </li>
+            <li class="pc-item"><%= link_to t('sidebar.lead_add').capitalize, "/leads/new", class: "pc-link" %> </li>
+          </ul>
+        </li>
+        <li class="pc-item pc-hasmenu">
+          <a href="#!"  class="no-default-link pc-link "><span class="pc-micon"><i data-feather="user"></i></span><span
+							class="pc-mtext"><%= t('sidebar.profile').capitalize %></span><span class="pc-arrow"><i
+								data-feather="chevron-right"></i></span></a>
+          <ul class="pc-submenu">
+            <li class="pc-item"><a class="pc-link" href="<%= users_show_path %>"><%= t('sidebar.show_profile').capitalize %></a></li>
+            <li class="pc-item"><a class="pc-link" href="<%= users_edit_path %>"><%= t('sidebar.edit_profile').capitalize %></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- [ navigation menu ] end -->

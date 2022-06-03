@@ -1,0 +1,16 @@
+  
+<div class="alert alert-warning">
+  <%= flash[:notice] %>
+</div>
+<div class="card-body">
+  <%= bootstrap_form_with(model: @app_aff, local: true) do |f| %>
+    <%= f.text_field :firstname, label: "Prénom" %>
+    <%= f.text_field :lastname, label: "Nom" %>
+    <%= f.text_field :town, label: "Ville" %>
+    <%= f.text_field :street, label: "Rue" %>
+    <%= f.number_field :street_nbr, label: "N° rue" %>
+    <%= f.text_field :iban, label: "iban" %>
+    <%= f.text_field :bic, label: "Code bic" %>
+    <%= f.submit class: "btn  btn-primary"%>
+  <% end %>
+</div>

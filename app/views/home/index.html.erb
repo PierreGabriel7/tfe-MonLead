@@ -1,0 +1,911 @@
+	<!--  navigation menu  start -->
+	<nav class="pc-sidebar ">
+		<div class="navbar-wrapper">
+			<div class="m-header">
+				<a href="index.html" class="b-brand">
+
+
+					<!-- ========   change your logo hear   ============ -->
+
+					<%# Insert imagetag with class %>
+					<%= image_tag'logo.png', class: 'logo logo-lg'%>
+					<img src="assets/images/logo-sm.svg" alt="" class="logo logo-sm">
+				</a>
+			</div>
+			<div class="navbar-content">
+				<ul class="pc-navbar">
+					<li class="pc-item pc-caption">
+						<label>Navigation</label>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="home"></i></span><span class="pc-mtext">Dashboard</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="index.html">Sales</a></li>
+							<li class="pc-item"><a class="pc-link" href="dashboard-analytics.html">Analytics</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link"><span class="pc-micon"><i data-feather="layers"></i></span><span class="pc-mtext">Layouts</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a target="_blank" class="pc-link" href="layout-collapse.html">Collapse</a></li>
+							<li class="pc-item"><a target="_blank" class="pc-link" href="layout-horizontal.html">Horizontal</a></li>
+							<li class="pc-item"><a target="_blank" class="pc-link" href="layout-modern.html">Modern</a></li>
+							<li class="pc-item"><a target="_blank" class="pc-link" href="layout-advance.html">Advance</a></li>
+							<li class="pc-item"><a target="_blank" class="pc-link" href="layout-topbar.html">Topbar</a></li>
+							<li class="pc-item"><a target="_blank" class="pc-link" href="layout-tab.html">Tab</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="gift"></i></span><span class="pc-mtext">Widget</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="widget-statistic.html">Statistic</a></li>
+							<li class="pc-item"><a class="pc-link" href="widget-data.html">Data</a></li>
+							<li class="pc-item"><a class="pc-link" href="widget-chart.html">Chart</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="user"></i></span><span class="pc-mtext">User</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="user-profile.html">Profile</a></li>
+							<li class="pc-item"><a class="pc-link" href="user-profile-social.html">Social Profile</a></li>
+							<li class="pc-item"><a class="pc-link" href="user-card.html">User Card</a></li>
+							<li class="pc-item"><a class="pc-link" href="user-list.html">User List</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>Admin Panel</label>
+						<span>7+ Admin Panel Demos</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link"><span class="pc-micon"><i data-feather="activity"></i></span><span class="pc-mtext">Hospital</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="hospital-dashboard.html">Dashboard</a></li>
+							<li class="pc-item"><a class="pc-link" href="hospital-department.html">Department</a></li>
+							<li class="pc-item"><a class="pc-link" href="hospital-doctor.html">Doctor</a></li>
+							<li class="pc-item"><a class="pc-link" href="hospital-patient.html">Patient</a></li>
+							<li class="pc-item"><a class="pc-link" href="hospital-nurse.html">Nurse</a></li>
+							<li class="pc-item"><a class="pc-link" href="hospital-pharmacist.html">Pharmacist</a></li>
+							<li class="pc-item"><a class="pc-link" href="hospital-laboratorie.html">Laboratory</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="user-check"></i></span><span class="pc-mtext">Membership</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="member-dashboard.html">Dashboard</a></li>
+							<li class="pc-item"><a class="pc-link" href="member-mail-template.html">Email templates</a></li>
+							<li class="pc-item"><a class="pc-link" href="member-countries.html">Country</a></li>
+							<li class="pc-item"><a class="pc-link" href="member-coupons.html">Coupons</a></li>
+							<li class="pc-item"><a class="pc-link" href="member-newsletter.html">Newsletter</a></li>
+							<li class="pc-item"><a class="pc-link" href="member-user.html">User</a></li>
+							<li class="pc-item"><a class="pc-link" href="member-membership.html">Membership</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="life-buoy"></i></span><span class="pc-mtext">Helpdesk</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="help-dashboard.html">Helpdesk dashboard</a></li>
+							<li class="pc-item"><a class="pc-link" href="help-create-ticket.html">Create ticket</a></li>
+							<li class="pc-item"><a class="pc-link" href="help-ticket.html">ticket list</a></li>
+							<li class="pc-item"><a class="pc-link" href="help-ticket-details.html">ticket Details</a></li>
+							<li class="pc-item"><a class="pc-link" href="help-customer.html">Customer</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="book"></i></span><span class="pc-mtext">School</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="school-dashboard.html">Dashboard</a></li>
+							<li class="pc-item"><a class="pc-link" href="school-student.html">Student</a></li>
+							<li class="pc-item"><a class="pc-link" href="school-parents.html">Parents</a></li>
+							<li class="pc-item"><a class="pc-link" href="school-teacher.html">Teacher</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link" data-toggle="tooltip" title="Student Information System"><span class="pc-micon"><i data-feather="user"></i></span><span class="pc-mtext">SIS</span><span class="pc-arrow"><i
+									data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="sis-dashboard.html">Dashboard</a></li>
+							<li class="pc-item"><a class="pc-link" href="sis-leave.html">Leave</a></li>
+							<li class="pc-item"><a class="pc-link" href="sis-evaluation.html">Evaluation</a></li>
+							<li class="pc-item"><a class="pc-link" href="sis-event.html">Event</a></li>
+							<li class="pc-item"><a class="pc-link" href="sis-circular.html">Circular</a></li>
+							<li class="pc-item"><a class="pc-link" href="sis-course.html">Course</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link"><span class="pc-micon"><i data-feather="target"></i></span><span class="pc-mtext">Crypto</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="crypto-dashboard.html">Dashboard</a></li>
+							<li class="pc-item"><a class="pc-link" href="crypto-exchange.html">Exchange</a></li>
+							<li class="pc-item"><a class="pc-link" href="crypto-wallet.html">Wallet</a></li>
+							<li class="pc-item"><a class="pc-link" href="crypto-transactions.html">Transactions</a></li>
+							<li class="pc-item"><a class="pc-link" href="crypto-history.html">History</a></li>
+							<li class="pc-item"><a class="pc-link" href="crypto-trading.html">Trading</a></li>
+							<li class="pc-item"><a class="pc-link" href="crypto-initial-coin.html">Initial coin</a></li>
+							<li class="pc-item"><a class="pc-link" href="crypto-ico-listing.html">Ico listing</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link"><span class="pc-micon"><i data-feather="shopping-cart"></i></span><span class="pc-mtext">E-Commerce</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="ecom-product.html">Product</a></li>
+							<li class="pc-item"><a class="pc-link" href="ecom-product-details.html">Product details</a></li>
+							<li class="pc-item"><a class="pc-link" href="ecom-order.html">Order</a></li>
+							<li class="pc-item"><a class="pc-link" href="ecom-checkout.html">Checkout</a></li>
+							<li class="pc-item"><a class="pc-link" href="ecom-cart.html">Shopping Cart</a></li>
+							<li class="pc-item"><a class="pc-link" href="ecom-customers.html">Customers</a></li>
+							<li class="pc-item"><a class="pc-link" href="ecom-sellers.html">Sellers</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>Elements</label>
+						<span>UI Components</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="box"></i></span><span class="pc-mtext">Basic</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="bc_alert.html">Alert</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_button.html">Button</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_badges.html">Badges</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_breadcrumb-pagination.html">Breadcrumb & paggination</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_card.html">Cards</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_collapse.html">Collapse</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_carousel.html">Carousel</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_grid.html">Grid system</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_progress.html">Progress</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_modal.html">Modal</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_spinner.html">Spinner</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_tabs.html">Tabs & pills</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_typography.html">Typography</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_tooltip-popover.html">Tooltip & popovers</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_toasts.html">Toasts</a></li>
+							<li class="pc-item"><a class="pc-link" href="bc_extra.html">Other</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="gitlab"></i></span><span class="pc-mtext">Advance</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="ac_alert.html">Sweet alert</a></li>
+							<li class="pc-item"><a class="pc-link" href="ac-datepicker-componant.html">Datepicker</a></li>
+							<li class="pc-item"><a class="pc-link" href="ac_lightbox.html">Lightbox</a></li>
+							<li class="pc-item"><a class="pc-link" href="ac_notification.html">Notification</a></li>
+							<li class="pc-item"><a class="pc-link" href="ac_pnotify.html">Pnotify</a></li>
+							<li class="pc-item"><a class="pc-link" href="ac_rating.html">Rating</a></li>
+							<li class="pc-item"><a class="pc-link" href="ac_rangeslider.html">Rangeslider</a></li>
+							<li class="pc-item"><a class="pc-link" href="ac_syntax_highlighter.html">Syntax highlighter</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="feather"></i></span><span class="pc-mtext">Icons</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="icon-feather.html">Feather</a></li>
+							<!-- <li class="pc-item"><a class="pc-link" href="icon-fontawsome-dual.html">Font Awesome<span class="pc-badge badge badge-info">Dualtone</span></a></li> -->
+							<li class="pc-item"><a class="pc-link" href="icon-fontawsome.html">Font Awesome 5</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>Forms</label>
+						<span>40+ Ready to Use From plugins</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="layout"></i></span><span class="pc-mtext">Forms Elements</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="form_elements.html">Form Basic</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_basic.html">Form Options</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_input_group.html">Input Groups</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_checkbox.html">Checkbox</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_radio.html">Radio</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_switch.html">Switch</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_megaoption.html">Mega option</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="file-plus"></i></span><span class="pc-mtext">Forms Plugins</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item pc-hasmenu">
+								<a class="pc-link" href="#">Date<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+								<ul class="pc-submenu">
+									<li class="pc-item"><a class="pc-link" href="form2_datepicker.html">Datepicker</a></li>
+									<li class="pc-item"><a class="pc-link" href="form2_daterangepicker.html">Date Range Picker</a></li>
+									<li class="pc-item"><a class="pc-link" href="form2_timepicker.html">Timepicker</a></li>
+								</ul>
+							</li>
+							<li class="pc-item pc-hasmenu">
+								<a class="pc-link" href="#">Select<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+								<ul class="pc-submenu">
+									<li class="pc-item"><a class="pc-link" href="form2_multipleselectsplitter.html">Multiple Select Splitter</a></li>
+									<li class="pc-item"><a class="pc-link" href="form2_select.html">Select</a></li>
+									<li class="pc-item"><a class="pc-link" href="form2_select2.html">Select2</a></li>
+								</ul>
+							</li>
+							<li class="pc-item"><a class="pc-link" href="form2_recaptcha.html">Google reCaptcha</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_inputmask.html">Input Masks</a></li>
+							<li class="pc-item"><a class="pc-link" href="form2_rangeslider.html">Range Slider</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="edit"></i></span><span class="pc-mtext">Text Editors</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="editor-classic.html">CK editor</a></li>
+							<li class="pc-item"><a class="pc-link" href="editor-trumbowyg.html">Trumbowyg editor</a></li>
+						</ul>
+					</li>
+					<li class="pc-item">
+						<a href="form-validation.html" class="pc-link "><span class="pc-micon"><i data-feather="check-circle"></i></span><span class="pc-mtext">Form Validation</span></a>
+					</li>
+					<li class="pc-item"><a href="file-upload.html" class="pc-link "><span class="pc-micon"><i data-feather="upload-cloud"></i></span><span class="pc-mtext">File upload</span></a></li>
+					<li class="pc-item"><a href="image_crop.html" class="pc-link "><span class="pc-micon"><i data-feather="scissors"></i></span><span class="pc-mtext">Image cropper</span></a></li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i class="icon feather icon-more-horizontal-"></i></span><span class="pc-mtext">Form Wizard</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="form-wizard.html">Wizard</a></li>
+							<li class="pc-item"><a class="pc-link" href="page-wizard1.html">Wizard 1</a></li>
+							<li class="pc-item"><a class="pc-link" href="page-wizard2.html">Wizard 2</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>table</label>
+						<span>Advance Datatable Integrated</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="grid"></i></span><span class="pc-mtext">Bootstrap table</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="tbl_bootstrap.html">Basic table</a></li>
+							<li class="pc-item"><a class="pc-link" href="tbl_sizing.html">Sizing table</a></li>
+							<li class="pc-item"><a class="pc-link" href="tbl_border.html">Border table</a></li>
+							<li class="pc-item"><a class="pc-link" href="tbl_styling.html">Styling table</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="grid"></i></span><span class="pc-mtext">Data table</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="dt_basic.html">Basic initialization</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_advance.html">Advance initialization</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_styling.html">Styling</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_api.html">API</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_plugin.html">Plug-in</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_sources.html">Data sources</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="server"></i></span><span class="pc-mtext">DT extensions</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="dt_ext_autofill.html">Autofill</a></li>
+							<li class="pc-item pc-hasmenu">
+								<a href="#!" id="no-default-link" class="pc-link "><span class="pc-mtext">Button</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+								<ul class="pc-submenu">
+									<li class="pc-item"><a class="pc-link" href="dt_ext_basic_buttons.html">Basic button</a></li>
+									<li class="pc-item"><a class="pc-link" href="dt_ext_export_buttons.html">Data export</a></li>
+								</ul>
+							</li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_col_reorder.html">Col reorder</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_fixed_columns.html">Fixed columns</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_fixed_header.html">Fixed header</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_key_table.html">Key table</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_responsive.html">Responsive</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_row_reorder.html">Row reorder</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_scroller.html">Scroller</a></li>
+							<li class="pc-item"><a class="pc-link" href="dt_ext_select.html">Select table</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>Chart & Maps</label>
+						<span>Tones of readymade charts</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="pie-chart"></i></span><span class="pc-mtext">Chart</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="chart-apex.html">Apex Chart</a></li>
+							<li class="pc-item"><a class="pc-link" href="chart-chartjs.html">Chart js</a></li>
+							<li class="pc-item"><a class="pc-link" href="chart-highchart.html">Highchart</a></li>
+							<li class="pc-item"><a class="pc-link" href="chart-knob.html">Knob</a></li>
+							<li class="pc-item"><a class="pc-link" href="chart-peity.html">Peity</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="map"></i></span><span class="pc-mtext">Maps</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="map-google.html">Google</a></li>
+							<li class="pc-item"><a class="pc-link" href="map-api.html">Gmap search API</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>Pages</label>
+						<span>15+ Redymade Pages</span>
+					</li>
+					<li class="pc-item"><a href="landing.html" class="pc-link "><span class="pc-micon"><i data-feather="airplay"></i></span><span class="pc-mtext">Landing</span></a></li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link"><span class="pc-micon"><i data-feather="lock"></i></span><span class="pc-mtext">Authentication</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="auth-signup.html" target="_blank">Sign up</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-signup-img-side.html" target="_blank">Sign up v2</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-signup-3.html" target="_blank">Sign up v3</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-signin.html" target="_blank">Sign in</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-signin-img-side.html" target="_blank">Sign in v2</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-signin-3.html" target="_blank">Sign in v3</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-reset-password.html" target="_blank">Reset password</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-reset-password-img-side.html" target="_blank">Reset password v2</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-reset-password-3.html" target="_blank">Reset password v3</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-change-password.html" target="_blank">Change password</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-change-password-img-side.html" target="_blank">Change password v2</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-change-password-3.html" target="_blank">Change password v3</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-profile-settings.html" target="_blank">Profile settings</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-tabs.html" target="_blank">Tabs Authentication</a></li>
+							<li class="pc-item"><a class="pc-link" href="auth-lockscreen.html" target="_blank">Lockscreen</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="sliders"></i></span><span class="pc-mtext">Maintenance</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="maint-error.html">Error</a></li>
+							<li class="pc-item"><a class="pc-link" href="maint-offline-ui.html" target="_blank">Offline UI</a></li>
+							<li class="pc-item"><a class="pc-link" href="maint-maintance.html" target="_blank">Maintenance</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>App</label>
+						<span>Creative application design</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="mail"></i></span><span class="pc-mtext">Email</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="email_inbox.html">Inbox</a></li>
+							<li class="pc-item"><a class="pc-link" href="email_read.html">Read mail</a></li>
+							<li class="pc-item"><a class="pc-link" href="email_compose.html">Compose mail</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="clipboard"></i></span><span class="pc-mtext">Task</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="task-list.html">List</a></li>
+							<li class="pc-item"><a class="pc-link" href="task-board.html">Board</a></li>
+							<li class="pc-item"><a class="pc-link" href="task-detail.html">Detail</a></li>
+						</ul>
+					</li>
+					<li class="pc-item">
+						<a href="todo.html" class="pc-link "><span class="pc-micon"><i data-feather="check-square"></i></span><span class="pc-mtext">To-Do</span></a>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="image"></i></span><span class="pc-mtext">Gallery</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="gallery-grid.html">Grid</a></li>
+							<li class="pc-item"><a class="pc-link" href="gallery-masonry.html">Masonry</a></li>
+						</ul>
+					</li>
+					<li class="pc-item pc-caption">
+						<label>Extension</label>
+						<span>fabulous Extension Page</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="headphones"></i></span><span class="pc-mtext">Faq</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="page-faq.html">Faq 1</a></li>
+							<li class="pc-item"><a class="pc-link" href="page-faq2.html">Faq 2</a></li>
+							<li class="pc-item pc-hasmenu">
+								<a class="pc-link" href="#!">Faq 3<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+								<ul class="pc-submenu">
+									<li class="pc-item"><a class="pc-link" href="page-faq3.html">view</a></li>
+									<li class="pc-item"><a class="pc-link" href="page-faq3-category.html">Category</a></li>
+									<li class="pc-item"><a class="pc-link" href="page-faq3-details.html">Details</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="dollar-sign"></i></span><span class="pc-mtext">Invoice</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="page-invoice.html">Invoice</a></li>
+							<li class="pc-item"><a class="pc-link" href="page-invoice-summary.html">Invoice Summary</a></li>
+							<li class="pc-item"><a class="pc-link" href="page-invoice-list.html">Invoice List</a></li>
+						</ul>
+					</li>
+
+					<li class="pc-item"><a href="full-calendar.html" class="pc-link "><span class="pc-micon"><i data-feather="calendar"></i></span><span class="pc-mtext">Full calendar</span></a></li>
+					<li class="pc-item pc-caption">
+						<label>Other</label>
+						<span>Extra more things</span>
+					</li>
+					<li class="pc-item pc-hasmenu">
+						<a href="#!" id="no-default-link" class="pc-link"><span class="pc-micon"><i data-feather="menu"></i></span><span class="pc-mtext">Menu levels</span><span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+						<ul class="pc-submenu">
+							<li class="pc-item"><a class="pc-link" href="#!">Menu Level 2.1</a></li>
+							<li class="pc-item pc-hasmenu">
+								<a href="#!" id="no-default-link" class="pc-link">Menu level 2.2<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+								<ul class="pc-submenu">
+									<li class="pc-item"><a class="pc-link" href="#!">Menu level 3.1</a></li>
+									<li class="pc-item"><a class="pc-link" href="#!">Menu level 3.2</a></li>
+								</ul>
+							</li>
+							<li class="pc-item pc-hasmenu">
+							<li class="pc-item pc-hasmenu">
+								<a href="#!" id="no-default-link" class="pc-link">Menu level 2.3<span class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
+								<ul class="pc-submenu">
+									<li class="pc-item"><a class="pc-link" href="#!">Menu level 3.1</a></li>
+									<li class="pc-item"><a class="pc-link" href="#!">Menu level 3.2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="pc-item disabled"><a href="#!" id="no-default-link" class="pc-link "><span class="pc-micon"><i data-feather="power"></i></span><span class="pc-mtext">Disabled menu</span></a></li>
+					<li class="pc-item"><a href="sample-page.html" class="pc-link "><span class="pc-micon"><i data-feather="sidebar"></i></span><span class="pc-mtext">Sample page</span></a></li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="pc-container"> 
+ <div class="page-header">
+        <div class="page-block">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="page-header-title">
+                        <h5 class="m-b-10">Dashboard Apporteur</h5>
+                    </div>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href=" <%= root_path %> "> Accueuil</a></li>
+                        <li class="breadcrumb-item">Dashboard Apporteur</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+ <div class="pcoded-content">
+
+
+
+ <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Veuillez compléter votre compte</h5>
+						<%# <%= link_to ('<i class="fa fa-pencil-square-o"></i>'), edit_apporteur_path(@user.id) %> %>
+
+                    </div>
+
+                    
+
+
+                    <div class="card-body">
+                    <p>sqiufghuisrfyihu</p>
+                    <p><%= @profile_url  %></p>
+                       <%= bootstrap_form_tag url: '/registration/complete_registration' do |f| %>
+                          <%= f.text_field :firstname, label: "Novice" %>
+                          <%= f.text_field :lastname %>
+                          <%= f.text_field :town %>
+                          <%= f.text_field :street %>
+                          <%= f.number_field  :street_nbr %>
+                          <%= f.text_field :lastname %>
+                          <%= f.submit class: "btn  btn-primary"%>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+  
+  <div class="row">
+
+
+
+
+
+</div>
+
+
+        <div class="row">
+            <!-- support-section start -->
+            <div class="col-xl-6 col-md-12">
+                <div class="card flat-card">
+                    <div class="row-table">
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="icon feather icon-users text-primary mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>1000</h5>
+                                    <span>Customers</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 d-none d-md-table-cell d-lg-table-cell d-xl-table-cell card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="icon feather icon-globe text-primary mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>$1252</h5>
+                                    <span>Revenue</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="icon feather icon-trending-up text-primary mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>600</h5>
+                                    <span>Growth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-table">
+                        <div class="col-sm-6 card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="icon feather icon-rotate-ccw text-primary mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>3550</h5>
+                                    <span>Returns</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 d-none d-md-table-cell d-lg-table-cell d-xl-table-cell card-body br">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="icon feather icon-download text-primary mb-1 d-block"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>3550</h5>
+                                    <span>Downloads</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 card-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <i class="icon feather icon-shopping-cart text-primary mb-1 d-blockz"></i>
+                                </div>
+                                <div class="col-sm-8 text-md-center">
+                                    <h5>100%</h5>
+                                    <span>Order</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0">
+                                <h2 class="m-0">53.94%</h2>
+                                <span class="text-primary">Conversion Rate</span>
+                                <p class="mb-3 mt-3">Number of conversions divided by the total visitors. </p>
+                            </div>
+                            <div id="support-chart"></div>
+                            <div class="card-footer border-0 bg-primary text-white background-pattern-white">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">10</h4>
+                                        <span>2018</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">15</h4>
+                                        <span>2017</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 text-white">13</h4>
+                                        <span>2016</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card support-bar overflow-hidden">
+                            <div class="card-body pb-0">
+                            <%# <%= image_tag('/assets/images/Pierre.jpg') %>
+                                <h2 class="m-0">1432</h2>
+                                <span class="text-primary">Order delivered</span>
+                                <p class="mb-3 mt-3">Total number of order delivered in this month.</p>
+                            </div>
+                            <div class="card-footer border-0">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 class="m-0">130</h4>
+                                        <span>May</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0">251</h4>
+                                        <span>June</span>
+                                    </div>
+                                    <div class="col">
+                                        <h4 class="m-0 ">235</h4>
+                                        <span>July</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="support-chart1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Department wise monthly sales report</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row pb-2">
+                            <div class="col-auto m-b-10">
+                                <h3 class="mb-1">$21,356.46</h3>
+                                <span>Total Sales</span>
+                            </div>
+                            <div class="col-auto m-b-10">
+                                <h3 class="mb-1">$1935.6</h3>
+                                <span>Average</span>
+                            </div>
+                        </div>
+                        <div id="account-chart"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- support-section end -->
+            <!-- customer-section start -->
+            <div class="col-xl-6 col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h6>Customer Satisfaction</h6>
+                        <span>It takes continuous effort to maintain high customer satisfaction levels Internal and external.</span>
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="col">
+                                <div id="satisfaction-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h5>New Products</h5>
+                    </div>
+                    <div class="pro-scroll" style="height:255px;position:relative;">
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover m-b-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Image</th>
+                                            <th>Status</th>
+                                            <th>Price</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>HeadPhone</td>
+                                            <td><img src="assets/images/widget/p1.jpg" alt="" class="img-20"></td>
+                                            <td>
+                                                <div><label class="badge badge-light-warning">Pending</label></div>
+                                            </td>
+                                            <td>$10</td>
+                                            <td><a href="#!"><i class="icon feather icon-edit f-16  text-success"></i></a><a href="#!"><i class="feather icon-trash-2 ml-3 f-16 text-danger"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Iphone 6</td>
+                                            <td><img src="assets/images/widget/p2.jpg" alt="" class="img-20"></td>
+                                            <td>
+                                                <div><label class="badge badge-light-danger">Cancel</label></div>
+                                            </td>
+                                            <td>$20</td>
+                                            <td><a href="#!"><i class="icon feather icon-edit f-16  text-success"></i></a><a href="#!"><i class="feather icon-trash-2 ml-3 f-16 text-danger"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacket</td>
+                                            <td><img src="assets/images/widget/p3.jpg" alt="" class="img-20"></td>
+                                            <td>
+                                                <div><label class="badge badge-light-success">Success</label></div>
+                                            </td>
+                                            <td>$35</td>
+                                            <td><a href="#!"><i class="icon feather icon-edit f-16 text-success"></i></a><a href="#!"><i class="feather icon-trash-2 ml-3 f-16 text-danger"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sofa</td>
+                                            <td><img src="assets/images/widget/p4.jpg" alt="" class="img-20"></td>
+                                            <td>
+                                                <div><label class="badge badge-light-danger">Cancel</label></div>
+                                            </td>
+                                            <td>$85</td>
+                                            <td><a href="#!"><i class="icon feather icon-edit f-16 text-success"></i></a><a href="#!"><i class="feather icon-trash-2 ml-3 f-16 text-danger"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Iphone 6</td>
+                                            <td><img src="assets/images/widget/p2.jpg" alt="" class="img-20"></td>
+                                            <td>
+                                                <div><label class="badge badge-light-success">Success</label></div>
+                                            </td>
+                                            <td>$20</td>
+                                            <td><a href="#!"><i class="icon feather icon-edit f-16 text-success"></i></a><a href="#!"><i class="feather icon-trash-2 ml-3 f-16 text-danger"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>HeadPhone</td>
+                                            <td><img src="assets/images/widget/p1.jpg" alt="" class="img-20"></td>
+                                            <td>
+                                                <div><label class="badge badge-light-warning">Pending</label></div>
+                                            </td>
+                                            <td>$50</td>
+                                            <td><a href="#!"><i class="icon feather icon-edit f-16 text-success"></i></a><a href="#!"><i class="feather icon-trash-2 ml-3 f-16 text-danger"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Iphone 6</td>
+                                            <td><img src="assets/images/widget/p2.jpg" alt="" class="img-20"></td>
+                                            <td>
+                                                <div><label class="badge badge-light-danger">Cancel</label></div>
+                                            </td>
+                                            <td>$30</td>
+                                            <td><a href="#!"><i class="icon feather icon-edit f-16 text-success"></i></a><a href="#!"><i class="feather icon-trash-2 ml-3 f-16 text-danger"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card prod-p-card background-pattern">
+                            <div class="card-body">
+                                <div class="row align-items-center m-b-0">
+                                    <div class="col">
+                                        <h6 class="m-b-5">Total Profit</h6>
+                                        <h3 class="m-b-0">$1,783</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-money-bill-alt text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card prod-p-card bg-primary background-pattern-white">
+                            <div class="card-body">
+                                <div class="row align-items-center m-b-0">
+                                    <div class="col">
+                                        <h6 class="m-b-5 text-white">Total Orders</h6>
+                                        <h3 class="m-b-0 text-white">15,830</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-database text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card prod-p-card bg-primary background-pattern-white">
+                            <div class="card-body">
+                                <div class="row align-items-center m-b-0">
+                                    <div class="col">
+                                        <h6 class="m-b-5 text-white">Average Price</h6>
+                                        <h3 class="m-b-0 text-white">$6,780</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-dollar-sign text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card prod-p-card background-pattern">
+                            <div class="card-body">
+                                <div class="row align-items-center m-b-0">
+                                    <div class="col">
+                                        <h6 class="m-b-5">Product Sold</h6>
+                                        <h3 class="m-b-0">6,784</h3>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-tags text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card feed-card">
+                    <div class="card-header">
+                        <h5>Feeds</h5>
+                    </div>
+                    <div class="feed-scroll" style="height:385px;position:relative;">
+                        <div class="card-body">
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="bell" class="badge-light-primary feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">You have 3 pending tasks. <span class="text-muted float-right f-14">Just Now</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="shopping-cart" class="badge-light-danger feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">New order received <span class="text-muted float-right f-14">30 min ago</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="file-text" class="badge-light-success feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">You have 3 pending tasks. <span class="text-muted float-right f-14">Just Now</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="bell" class="badge-light-primary feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">You have 4 tasks Done. <span class="text-muted float-right f-14">1 hours ago</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="file-text" class="badge-light-success feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">You have 2 pending tasks. <span class="text-muted float-right f-14">Just Now</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="shopping-cart" class="badge-light-danger feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">New order received <span class="text-muted float-right f-14">4 hours ago</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="shopping-cart" class="badge-light-danger feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">New order Done <span class="text-muted float-right f-14">Just Now</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-25 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="file-text" class="badge-light-success feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">You have 5 pending tasks. <span class="text-muted float-right f-14">5 hours ago</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row m-b-0 align-items-center">
+                                <div class="col-auto p-r-0">
+                                    <i data-feather="bell" class="badge-light-primary feed-icon"></i>
+                                </div>
+                                <div class="col">
+                                    <a href="#!">
+                                        <h6 class="m-b-5">You have 4 tasks Done. <span class="text-muted float-right f-14">2 hours ago</span></h6>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- customer-section end -->
+        </div>
+      </div>

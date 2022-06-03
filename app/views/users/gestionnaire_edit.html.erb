@@ -1,0 +1,34 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+         <div class="page-header-title">
+            <h5 class="m-b-10"><%= t('breadcrumbs.user_edition').capitalize %></h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<%= root_path %>"><%= t('breadcrumbs.home').capitalize %></a></li>
+            <li class="breadcrumb-item"><%= t('breadcrumbs.user_edition').capitalize %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <div class="row">
+      <div class="card-body">
+        <%= bootstrap_form_tag url: "/users", :method => :put  do |f| %>
+          <%= f.text_field :company_name, label: t('manager.table.company_name').capitalize, value:@user.company_name %>
+          <%= f.text_field :town, label: t('leads.table.town').capitalize , value:@user.town%>
+          <%= f.text_field :street, label: t('leads.table.street').capitalize , value:@user.street%>
+          <%= f.number_field :street_nbr, label: t('leads.table.street_nbr').capitalize, value:@user.street_nbr %>
+          <%= f.text_field :iban, label: t('leads.table.iban').capitalize , value:@user.iban%>
+          <%= f.text_field :bic, label: t('leads.table.bic').capitalize, value:@user.bic%>
+          <%= f.submit class: "btn  btn-primary", value:t('actions.email.edit').capitalize%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,253 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10"><%= t('breadcrumbs.admin_dashboard').capitalize %></h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<%= root_path %>"><%= t('breadcrumbs.home').capitalize %></a></li>
+            <li class="breadcrumb-item"><%= t('breadcrumbs.contracts').capitalize %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <%# Show flash message if any  %>
+    <% flash.each do |type, msg| %>
+      <div class="col-md-12">
+        <% if type == "success" %>
+          <div class="alert alert-success text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "error"  %>
+          <div class="alert alert-danger text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "notice" %>
+          <div class="alert alert-primary text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="row">
+      <!-- customar project  start -->
+      <div class="col-xl-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header">
+              <h5><%= t('contracts.admin_contracts').capitalize %></h5>
+            </div>
+            <div class="table-responsive">
+              <div id="report-table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <table id="report-table" class="table table-bordered table-striped mb-0 dataTable no-footer" role="grid" aria-describedby="report-table_info">
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 170.656px;"><%= t('contracts.table.manager').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 139.062px;"><%= t('contracts.table.lead').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 55.6094px;"><%= t('contracts.table.intermediary').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 56.6094px;"><%= t('contracts.table.type').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 198.562px;"><%= t('contracts.table.total').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 198.562px;"><%= t('contracts.table.commission').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 297.663px;"><%= t('contracts.table.region').capitalize %> (<%= t('contracts.table.lead').capitalize %>)</th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 297.663px;"><%= t('contracts.table.valid').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 297.663px;"><%= t('contracts.table.claimed').capitalize %></th>
+                          <th  tabindex="0" rowspan="1" colspan="1" style="width: 297.663px;"><%= t('contracts.table.paid').capitalize %></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% row="odd"  %>
+                        <% @paginated.each_with_index do |i, index| %>
+                          <% if row == "odd"%>
+                            <tr role="row" class="odd">
+                              <% row="even"  %>
+                            <% else %>
+                              <tr role="row" class="even">
+                                <% row="odd"  %>
+                              <% end %>
+                              <td class="align-middle">
+                                <div class="email"><%= getGestionnaireName(i["Record"]["gestionnaireID"]) %>
+                                  <button type="button" data-target="#exampleModal<%=index%>" data-toggle="modal" class="btn btn-sm"><i class="text-primary fas fa-envelope"></i>
+                                  </button>
+                                  <div class="modal fade" id="exampleModal<%=index%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel"><%= t('actions.email.new_msg_to').capitalize %>: <%= getGestionnaireName(i["Record"]["gestionnaireID"]) %></h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <form role="form" action="contact/send_contact_admin" accept-charset="UTF-8" method="post">
+                                            <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label"><%= t('actions.email.recipient').capitalize %>:</label>
+                                              <input type="text" value="<%= getGestionnaireEmail(i["Record"]["gestionnaireID"]) %>" name="recipient" class="form-control" id="recipient-name" readonly >
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="message-text" class="col-form-label"><%= t('actions.email.message').capitalize %>:</label>
+                                              <textarea class="form-control" id="message-text" name="message"></textarea>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn  btn-secondary" data-dismiss="modal"><%= t('actions.email.close').capitalize %></button>
+                                              <button type="submit"  class="btn  btn-primary"><%= t('actions.email.send').capitalize %></button>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="align-middle">
+                                <div class="email"><%= getLeadName(i["Record"]["leadID"]) %>
+                                  <button type="button" data-target="#exampleModal1-<%=index%>" data-toggle="modal" class="btn btn-sm"><i class="text-primary fas fa-envelope"></i>
+                                  </button>
+                                  <div class="modal fade" id="exampleModal1-<%=index%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel"><%= t('actions.email.new_msg_to').capitalize %> <%= getLeadName(i["Record"]["leadID"]) %></h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <form role="form" action="contact/send_contact_admin" accept-charset="UTF-8" method="post">
+                                            <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label"><%= t('actions.email.recipient').capitalize %>:</label>
+                                              <input type="text" value="<%= getLeadEmail(i["Record"]["leadID"]) %>" name="recipient" class="form-control" id="recipient-name" readonly >
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="message-text" class="col-form-label"><%= t('actions.email.message').capitalize %>:</label>
+                                              <textarea class="form-control" id="message-text" name="message"></textarea>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn  btn-secondary" data-dismiss="modal"><%= t('actions.email.close').capitalize %></button>
+                                              <button type="submit"  class="btn  btn-primary"><%= t('actions.email.send').capitalize %></button>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="align-middle">
+                                <div class="email"><%= getAppAffName(i["Record"]["app_AffID"]) %>
+                                  <button type="button" data-target="#exampleModal1-<%=index%>" data-toggle="modal" class="btn btn-sm"><i class="text-primary fas fa-envelope"></i>
+                                  </button>
+                                  <div class="modal fade" id="exampleModal1-<%=index%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel"><%= t('actions.email.new_msg_to').capitalize %><%= getAppAffName(i["Record"]["app_AffID"]) %></h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <form role="form" action="contact/send_contact_admin" accept-charset="UTF-8" method="post">
+                                            <div class="form-group">
+                                              <label for="recipient-name" class="col-form-label"><%= t('actions.email.recipient').capitalize %>:</label>
+                                              <input type="text" value="<%= getAppAffEmail(i["Record"]["app_AffID"]) %>" name="recipient" class="form-control" id="recipient-name" readonly >
+                                            </div>
+                                            <div class="form-group">
+                                              <label for="message-text" class="col-form-label"><%= t('actions.email.message').capitalize %>:</label>
+                                              <textarea class="form-control" id="message-text" name="message"></textarea>
+                                            </div>
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn  btn-secondary" data-dismiss="modal"><%= t('actions.email.close').capitalize %></button>
+                                              <button type="submit"  class="btn  btn-primary"><%= t('actions.email.send').capitalize %></button>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td class="align-middle"><%= i["Record"]["type"]%></td>
+                              <td class="align-middle"><%= i["Record"]["montant"]%>€</td>
+                              <td class="align-middle font-weight-bold"><%= ((i["Record"]["montant"].to_i/100)*i["Record"]["comm_app_aff"].to_i).to_s + "€ (" + i["Record"]["comm_app_aff"] %>%)</td>
+                              <td class="align-middle">
+                                <div class="email">
+                                  <%= getLeadRegion(i["Record"]["leadID"]) %>
+                                  <button type="button" class="btn btn-sm map-btn" data-toggle="modal" data-target="#exampleModalCenter<%=index%>"><i class="text-primary fas fa-map-marker"></i></button>
+                                  <div id="exampleModalCenter<%=index%>" class="modal fade map-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalCenterTitle">Localisation de <%= getLeadName(i["Record"]["leadID"]) %></h5>
+                                          <button type="button" class="remove-map" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div class="openstreetmap"  data-long="<%= @leads_coordinates[index][0] %>" data-lat="<%= @leads_coordinates[index][1] %>"></div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn  btn-secondary remove-map" data-dismiss="modal">Fermer</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <% if i["Record"]["valide"] == "false" %>
+                                <td class="text-warning font-weight-bold align-middle"><%= t('contracts.table.non').capitalize %> <a href="contracts/validate_contract/<%= i["Key"] %>" class="btn btn-info btn-sm mrl-3"><i class='fas fa-check'></i> <%= t('contracts.table.validate').capitalize %> </a></td>
+                              <% else %>
+                                <td class="text-success font-weight-bold align-middle"><%= t('contracts.table.yess').capitalize %></td>
+                              <% end %>
+                              <% if i["Record"]["Retire"] == "false" %>
+                                <td class="text-warning font-weight-bold align-middle"><%= t('contracts.table.yess').capitalize %></td>
+                              <% else %>
+                                <td class="text-success font-weight-bold align-middle"><%= t('contracts.table.yess').capitalize %></td>
+                              <% end %>
+                              <% if i["Record"]["payer"] == "false" %>
+                                <td class="text-warning font-weight-bold align-middle"><%= t('contracts.table.non').capitalize %> <a href="contracts/pay_contract/<%= i["Key"] %>" class="btn btn-info btn-sm mrl-3"><i class='fas fa-euro-sign'></i> <%= t('contracts.table.pay').capitalize %> </a></td>
+                              <% else %>
+                                <td class="text-success font-weight-bold align-middle"><%= t('contracts.table.yess').capitalize %></td>
+                              <% end %>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-md-5">
+                      <div class="dataTables_info" id="report-table_info" role="status" aria-live="polite"><%= t('page_switcher.show').capitalize %> <%= @paginated.count == 0 ? '0' : (@items_per_page*(@current_page-1))+1 %> <%= t('page_switcher.to') %> <%= (@items_per_page*(@current_page-1))+@paginated.count %> <%= t('page_switcher.onn') %> <%=@elements_count%> <%= t('page_switcher.entries') %></div>
+                    </div>
+                    <div class="col-sm-12 col-md-7">
+                      <div class="dataTables_paginate paging_simple_numbers" id="report-table_paginate">
+                        <ul class="pagination">
+                          <% if @current_page == 1 %>
+                            <li class="paginate_button page-item previous disabled" id="report-table_previous"><a href="#" aria-controls="report-table" data-dt-idx="0" tabindex="0" class="page-link"><%= t('page_switcher.previous').capitalize %></a></li>
+                          <% else %>
+                            <li class="paginate_button page-item previous" id="report-table_previous"><a href="contracts?page=<%=@current_page-1%>" aria-controls="report-table" data-dt-idx="0" tabindex="0" class="page-link"><%= t('page_switcher.previous').capitalize %></a></li>
+                          <% end %>
+                          <% for i in 1..@total_pages do %>
+                            <% if i == @current_page %>
+                              <li class="paginate_button page-item active"><a href="#" id='no-default-link' aria-controls="report-table" data-dt-idx="<%=i%>" tabindex="<%=i%>" class="page-link"><%=i%></a></li>
+                            <% else %>
+                              <li class="paginate_button page-item"><a href="contracts?page=<%=i%>" aria-controls="report-table" data-dt-idx="<%=i%>" tabindex="<%=i%>" class="page-link"><%=i%></a></li>
+                            <% end %>
+                          <% end %>
+                          <% if @current_page < @total_pages %>
+                            <li class="paginate_button page-item next" id="report-table_next"><a href="contracts?page=<%=@current_page+1%>" aria-controls="report-table" data-dt-idx="2" tabindex="0" class="page-link"><%= t('page_switcher.next').capitalize %></a></li>
+                          <% else %>
+                            <li class="paginate_button page-item next disabled" id="report-table_next"><a href="#" aria-controls="report-table" data-dt-idx="2" tabindex="0" class="page-link"><%= t('page_switcher.next').capitalize %></a></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- customar project  end -->
+      </div>
+    </div>
+  </div>

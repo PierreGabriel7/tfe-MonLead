@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p> <%=t('mailer.new_mail_from').capitalize %>  <%= params[:from] %>!</p>
+    --------------------------
+  </p>
+  <p><%= t('mailer.new_mail_from').capitalize %>: <%= params[:app_aff] %></p>
+  <p><%= t('leads.table.email').capitalize %>: <%= params[:from] %></p>
+  <p><%= t('leads.table.town').capitalize %>: <%= params[:town] %></p>
+  <p><%= t('mailer.address').capitalize %>: <%= params[:adress] %></p>
+  <p>
+    <%= t('mailer.message').capitalize %>:<br>
+    --------------------------
+  </p>
+  <p><%= params[:message] %></p>
+</body>
+</html>

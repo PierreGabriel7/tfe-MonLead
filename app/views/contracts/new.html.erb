@@ -1,0 +1,52 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10"><%= t('breadcrumbs.manager_dashboard').capitalize %></h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<%= root_path %>"><%= t('breadcrumbs.home').capitalize %></a></li>
+            <li class="breadcrumb-item"><%= t('breadcrumbs.contracts').capitalize %></li>
+            <li class="breadcrumb-item"><%= t('breadcrumbs.new').capitalize %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <%# Show flash message if any  %>
+    <% flash.each do |type, msg| %>
+      <div class="col-md-12">
+        <% if type == "success" %>
+          <div class="alert alert-success text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "error"  %>
+          <div class="alert alert-danger text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "notice" %>
+          <div class="alert alert-primary text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="card-body">
+        <%= bootstrap_form_tag url: "/contracts"  do |f| %>
+          <%= f.select :category,   @categs_array, include_blank: t('contracts.category').capitalize,  label: "#{t('contracts.choose_category').capitalize}:", required: true %>
+          <%= f.select :lead,    @leads_array, include_blank: t('contracts.table.lead').capitalize,  label: "#{t('contracts.choose_lead').capitalize}:", required: true %>
+          <%= f.number_field :total, label: t('contracts.choose_value').capitalize, required: true %>
+          <%= f.number_field :comm, label: "#{t('contracts.choose_comm').capitalize} (%)", required: true %>
+          <%= f.text_field :commentaire, label: t('contracts.choose_comment').capitalize %>
+          <%= f.submit class: "btn  btn-primary", value: t('actions.email.create').capitalize %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

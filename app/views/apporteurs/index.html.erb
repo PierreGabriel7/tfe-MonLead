@@ -1,0 +1,39 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10">Dashboard apporteur d'affaires</h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">contracts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <%# Show flash message if any  %>
+    <% flash.each do |type, msg| %>
+      <div class="col-md-12">
+        <% if type == "success" %>
+          <div class="alert alert-success text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "error"  %>
+          <div class="alert alert-danger text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "notice" %>
+          <div class="alert alert-primary text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

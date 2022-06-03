@@ -1,0 +1,53 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10">Dashboard apporteur d'affaires</h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">contracts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <div class="row">
+      <div class="card-body">
+        <%= bootstrap_form_with(model: @manager, local: true) do |f| %>
+          <%= f.text_field :company_name, label: "Nom d'entreprise" %>
+          <%= f.text_field :phone, label: "Ville" %>
+          <%= f.text_field :town, label: "Ville" %>
+          <%= f.text_field :street, label: "Rue" %>
+          <%= f.number_field :street_nbr, label: "N° de rue" %>
+          <%= f.text_field :iban, label: "IBAN" %>
+          <%= f.text_field :bic, label: "Bic" %>
+          <%= f.submit class: "btn  btn-primary", value:"Mettre à jour"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ breadcrumb ] start -->
+<div class="page-header">
+  <div class="page-block">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <div class="page-header-title">
+          <h5 class="m-b-10">Dashboard admin</h5>
+        </div>
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Gestionnaires</a></li>
+          <li class="breadcrumb-item">nouveau</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- [ breadcrumb ] end -->
+</div>

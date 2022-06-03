@@ -1,0 +1,138 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10"><%= t('breadcrumbs.admin_dashboard').capitalize %></h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<%= root_path %>"><%= t('breadcrumbs.home').capitalize %></a></li>
+            <li class="breadcrumb-item"><%= t('manager.manager').capitalize %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <%# Show flash message if any  %>
+    <% flash.each do |type, msg| %>
+      <div class="col-md-12">
+        <% if type == "success" %>
+          <div class="alert alert-success text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "error"  %>
+          <div class="alert alert-danger text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "notice" %>
+          <div class="alert alert-primary text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="row">
+      <!-- customar project  start -->
+      <div class="col-xl-12">
+        <div class="card">
+          <div class="card-header">
+            <h5><%= t('manager.manager_list').capitalize %></h5>
+          </div>
+          <div class="card-body">
+            <div class="row align-items-center m-l-0">
+              <div class="col-sm-6 search_form">
+                <%= bootstrap_form_tag url: "/gestionnaires",:html => {:class => 'form-inline'}, :method => "get"   do |f| %>
+                  <%= f.select :type, [[t('manager.table.company_name').capitalize, "company_name"], [t('leads.table.email').capitalize, "email"], [t('leads.table.town').capitalize, "town"], [t('leads.table.street').capitalize, "street"], [t('leads.table.iban').capitalize, "iban"], [t('leads.table.bic').capitalize, "bic"]], { label: "#{t('actions.search.search_by').capitalize}: "  }, { class: "custom-select custom-select-sm form-control form-control-sm" } %>
+                  <%= f.text_field :keyword, label: "#{t('actions.search.contains').capitalize}:", class:'form-control form-control form-control-sm', required: true%>
+                  <%= f.submit class: "btn btn-primary btn-sm mb-3 btn-round sreach-btn", value:t('actions.search.search').capitalize %>
+                <% end %>
+              </div>
+              <div class="col-sm-6 text-right">
+                <%= link_to t('manager.add_manager').capitalize, "/gestionnaires/new", class: "btn btn-success btn-sm mb-3 btn-round" %>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <div id="report-table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <table id="report-table" class="table table-bordered table-striped mb-0 dataTable no-footer" role="grid" aria-describedby="report-table_info">
+                      <thead>
+                        <tr role="row">
+                          <th class="sorting" tabindex="0" aria-controls="report-table" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 123.062px;"><%=t('manager.table.company_name').capitalize%></th>
+                          <th class="sorting" tabindex="0" aria-controls="report-table" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 170.656px;"><%= t('leads.table.email').capitalize %></th>
+                          <th class="sorting" tabindex="0" aria-controls="report-table" rowspan="1" colspan="1" aria-label="Phone: activate to sort column ascending" style="width: 139.062px;"><%= t('leads.table.town').capitalize %></th>
+                          <th class="sorting" tabindex="0" aria-controls="report-table" rowspan="1" colspan="1" aria-label="Sex: activate to sort column ascending" style="width: 55.6094px;"><%= t('leads.table.street').capitalize %></th>
+                          <th class="sorting" tabindex="0" aria-controls="report-table" rowspan="1" colspan="1" aria-label="Birth Date: activate to sort column ascending" style="width: 126.438px;"><%= t('leads.table.iban').capitalize %></th>
+                          <th class="sorting" tabindex="0" aria-controls="report-table" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 56.6094px;"><%= t('leads.table.bic').capitalize %></th>
+                          <th class="sorting" tabindex="0" aria-controls="report-table" rowspan="1" colspan="1" aria-label="Options: activate to sort column ascending" style="width: 198.562px;"><%= t('leads.table.options').capitalize %></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% row="odd"  %>
+                        <% @paginated.each do |manager| %>
+                          <% if row == "odd"%>
+                            <tr role="row" class="odd">
+                              <% row="even"  %>
+                            <% else %>
+                              <tr role="row" class="even">
+                                <% row="odd"  %>
+                              <% end %>
+                              <td><%= manager.company_name%></td>
+                              <td><%= manager.liaison_utilisateur.email%></td>
+                              <td><%= manager.town%></td>
+                              <td><%= manager.street + ' ' + manager.street_nbr.to_s %></td>
+                              <td><%= manager.iban%></td>
+                              <td><%= manager.bic%></td>
+                              <td>
+                                <a href="<%= edit_gestionnaire_path(manager.id) %>" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;<%= t('actions.email.edit').capitalize %> </a>
+                                <%# <%=  link_to gestionnaire_path(manager.id), method: :delete, class: 'btn btn-danger btn-sm' do %>
+                                  <%# <i class="feather icon-trash-2"></i><%= t('actions.email.delete').capitalize %>
+                                  <%# <% end %>
+                                </td>
+                              </tr>
+                            <% end %>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info" id="report-table_info" role="status" aria-live="polite"><%= t('page_switcher.show').capitalize %> <%= @paginated.count == 0 ? '0' : (@items_per_page*(@current_page-1))+1 %> <%= t('page_switcher.to') %> <%= (@items_per_page*(@current_page-1))+@paginated.count %> <%= t('page_switcher.onn') %> <%=@elements_count%> <%= t('page_switcher.entries') %></div>
+                      </div>
+                      <div class="col-sm-12 col-md-7">
+                        <div class="dataTables_paginate paging_simple_numbers" id="report-table_paginate">
+                          <ul class="pagination">
+                            <% if @current_page == 1 %>
+                              <li class="paginate_button page-item previous disabled" id="report-table_previous"><a href="#" aria-controls="report-table" data-dt-idx="0" tabindex="0" class="page-link"><%= t('page_switcher.previous').capitalize %></a></li>
+                            <% else %>
+                              <li class="paginate_button page-item previous" id="report-table_previous"><a href="gestionnaires?page=<%=@current_page-1%>" aria-controls="report-table" data-dt-idx="0" tabindex="0" class="page-link"><%= t('page_switcher.previous').capitalize %></a></li>
+                            <% end %>
+                            <% for i in 1..@total_pages do %>
+                              <% if i == @current_page %>
+                                <li class="paginate_button page-item active"><a href="#" id='no-default-link' aria-controls="report-table" data-dt-idx="<%=i%>" tabindex="<%=i%>" class="page-link"><%=i%></a></li>
+                              <% else %>
+                                <li class="paginate_button page-item"><a href="gestionnaires?page=<%=i%>" aria-controls="report-table" data-dt-idx="<%=i%>" tabindex="<%=i%>" class="page-link"><%=i%></a></li>
+                              <% end %>
+                            <% end %>
+                            <% if @current_page < @total_pages %>
+                              <li class="paginate_button page-item next" id="report-table_next"><a href="gestionnaires?page=<%=@current_page+1%>" aria-controls="report-table" data-dt-idx="2" tabindex="0" class="page-link"><%= t('page_switcher.next').capitalize %></a></li>
+                            <% else %>
+                              <li class="paginate_button page-item next disabled" id="report-table_next"><a href="#" aria-controls="report-table" data-dt-idx="2" tabindex="0" class="page-link"><%= t('page_switcher.next').capitalize %></a></li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- customar project  end -->
+        </div>
+      </div>
+    </div>

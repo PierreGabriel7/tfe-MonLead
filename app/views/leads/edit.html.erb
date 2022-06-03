@@ -1,0 +1,36 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10"><%= t('breadcrumbs.intermediary_dashboard').capitalize %></h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<%= root_path %>"><%= t('breadcrumbs.home').capitalize %></a></li>
+            <li class="breadcrumb-item"><%= t('contracts.table.lead').capitalize %></li>
+            <li class="breadcrumb-item"><%= t('actions.email.edit').capitalize %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <div class="row">
+      <div class="card-body">
+        <%= bootstrap_form_with(model: @lead, local: true) do |f| %>
+          <%= f.text_field :firstname, label: t('leads.table.firstname').capitalize, required: true %>
+          <%= f.text_field :lastname, label: t('leads.table.lastname').capitalize, required: true %>
+          <%= f.text_field :town, label:  t('leads.table.town').capitalize, required: true %>
+          <%= f.text_field :street, label: t('leads.table.street').capitalize, required: true %>
+          <%= f.number_field :street_nbr, label: t('leads.table.street_nbr').capitalize, required: true %>
+          <%= f.text_field :iban, label: t('leads.table.iban').capitalize, required: true %>
+          <%= f.text_field :bic, label: t('leads.table.bic').capitalize %>
+          <%= f.submit class: "btn  btn-primary", value:t('actions.email.save').capitalize %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

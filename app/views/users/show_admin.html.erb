@@ -1,0 +1,90 @@
+<div class="pc-container">
+  <!-- [ breadcrumb ] start -->
+  <div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="page-header-title">
+            <h5 class="m-b-10"><%= t('profile.my_profie').capitalize %></h5>
+          </div>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<%= root_path %>"><%= t('breadcrumbs.home').capitalize %></a></li>
+            <li class="breadcrumb-item"><%= t('sidebar.profile').capitalize %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [ breadcrumb ] end -->
+  <div class="pcoded-content">
+    <%# Show flash message if any  %>
+    <% flash.each do |type, msg| %>
+      <div class="col-md-12">
+        <% if type == "success" %>
+          <div class="alert alert-success text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "error"  %>
+          <div class="alert alert-danger text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type == "notice" %>
+          <div class="alert alert-primary text-center" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="card">
+        <div class="card-header">
+          <h5><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user icon-svg-primary wid-20"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="p-l-5"><%= t('profile.my_info').capitalize %></span></h5>
+        </div>
+        <div class="card-body">
+          <div class="position-relative d-inline-block img-edition">
+            <%= image_tag @profile_picture_url, id:'no-default-link',alt: 'User image', class: 'img-radius img-fluid wid-80'%>
+            <%= bootstrap_form_tag url: '/user_avatar/upload', method: :post do |f| %>
+              <%= f.file_field :avatar, accept: "text/png", required: true %>
+              <%= f.submit value: t('actions.email.save').capitalize, class: "btn  btn-primary"  %>
+            <% end %>
+          </div>
+          <h5 class="mt-5 mb-3"><%= t('profile.details').capitalize %></h5>
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td class=""><%=t('leads.table.firstname').capitalize%></td>
+                <td class="">:</td>
+                <td class=""><%=@user.firstname%></td>
+              </tr>
+              <tr>
+                <td class=""><%=t('leads.table.lastname').capitalize%></td>
+                <td class="">:</td>
+                <td class=""><%=@user.lastname%></td>
+              </tr>
+              <tr>
+                <td class=""><%=t('leads.table.street').capitalize%></td>
+                <td class="">:</td>
+                <td class=""><%=@user.street + " " + @user.street_nbr.to_s %></td>
+              </tr>
+              <tr>
+                <td class=""><%=t('leads.table.town').capitalize%></td>
+                <td class="">:</td>
+                <td class=""><%=@user.town%></td>
+              </tr>
+              <tr>
+                <td class=""><%=t('leads.table.email').capitalize%></td>
+                <td class="">:</td>
+                <td class=""><%=@current_user.email%></td>
+              </tr>
+            </tbody>
+          </table>
+          <a class="btn btn-primary" href="/users/edit" role="button"><%= t('actions.email.edit').capitalize %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function() { //run when the DOM is ready
+       $('.custom-file-label').text(%=t('profile.choose_file').capitalize%>);
+    });
+  </script>

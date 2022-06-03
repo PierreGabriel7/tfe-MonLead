@@ -1,0 +1,9 @@
+Vous avez reçu un message de la part de  <%= params[:from] %>!
+--------------------------
+<%= t('mailer.from').capitalize %>: <%= params[:app_aff] %>
+<%= t('leads.table.email').capitalize %>: <%= params[:from] %>
+<%= t('leads.table.town').capitalize %>: <%= params[:town] %>
+<%= t('mailer.address').capitalize %>: <%= params[:adress] %>
+<%= t('mailer.message').capitalize %>:
+--------------------------
+<%= params[:message] %>

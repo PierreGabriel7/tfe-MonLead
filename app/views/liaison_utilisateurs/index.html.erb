@@ -1,0 +1,20 @@
+<h1>Liaison#index</h1>
+<p>Find me in app/views/liaison/index.html.erb</p>
+<h1>Liaison#index</h1>
+<p>Find me in app/views/liaison/index.html.erb</p>
+<h1>Liaison#index</h1>
+<p>Find me in app/views/liaison/index.html.erb</p>
+<h1>Liaison#index</h1>
+<p>Find me in app/views/liaison/index.html.erb</p>
+
+
+<% allLiaisons.each do |l| %>
+                      <li>
+                        <div style="font-size:12px;">
+                            
+                          <br>
+                          "<%= l.email %>"<br>
+                          Created: <%= l.created_at %>
+                        </div>
+                      </li>
+                      <% end %>

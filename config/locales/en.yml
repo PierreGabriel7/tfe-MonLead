@@ -1,0 +1,220 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#  t("controller.error_occured").capitalize + "."
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+
+en:
+  intermediary:
+    please_complete_account: "please complete your account informations before accesing the features of this website"
+
+  controller:
+    error_occured: "an error occured please contact the admin"
+
+    apporteurs:
+      account_saved: "your account has been saved"
+      successfully_saved: "successfully saved"
+
+    category:
+      categ_added: "successfully added"
+
+    contracts:
+      created: "the contract has been created"
+      paid: "the contract has been marked as paid and will be visible in the account of the intermediary"
+      validate: "the contract has been validated and will be visible to the intermediary contracts"
+      claimed: "your contract has been marked as paid, you will be credited soon"
+      comission_err: "there is a problem with the comissions please check again"
+      amount_err: "there is a problem with the amount please check again"
+
+    manager:
+      created : "successfuly created"
+      added: "successfuly added"
+      updated: "successfuly updated"
+      deleted: "successfuly deleted"
+ 
+    newsletter:
+      sent: "la newsletter à bien été envoyée"
+      error: "an error occured while sending the newsletter"
+    
+    user_avatar:
+      updated: "your avatar has been edited"
+      not_img: "the specified file is not a valid image"
+    
+    user:
+      updated: "your profile has been edited"
+
+  mailer:
+    message_sent: "the message had been sent"
+    message_error: "an error occured while sending the message"
+    new_mail_from: "you have a new message from"
+    new_manager_availble: "newsletter: A new manager is avaible!"
+    message: "message"
+    from: "from"
+    new_contract: "a contract with you has been created"
+    the_manager: "the manager"
+    manager_added: "has been added  to the MonLead services, he is now avaible for the contract creation"
+    address: "adress"
+    contract_val: "total value of the contract"
+    comm_intermediary: "commission of the intermediary"
+
+
+  profile:
+    my_profie: "my profile"
+    my_info: "my informations"
+    choose_file: "choose file"
+    brows: "browse"
+    details: "details"
+
+  user_types:
+    manager: "manager"
+    admin: "admin"
+    intermediary: "intermediary"
+
+  manager:
+      manager: "manager"
+      manager_list: "managers list"
+      add_manager: "add a manager"
+      table:
+        company_name: "company"
+  leads:
+    user: 
+      my_leads: "my leads"
+    admin:
+      my_leads: "all leads"
+    
+    add_lead: "add a lead"
+
+    table:
+      firstname: "firstname"
+      lastname: "lastname"
+      email: "email"
+      town: "town"
+      street: "street"
+      street_nbr: "street number"
+      iban: "iban"
+      bic: "bic"
+      options: "options"
+  
+  sidebar:
+    dashborad: "dashborad"
+    contract_list: "contracts list"
+    contract_add: "add contract"
+    lead_list: "leads list"
+    lead_add: "add lead"
+    manager_list: "managers list"
+    manager_add: "add manager"
+    profile: "profile"
+    show_profile: "show profile"
+    edit_profile: "edit profile"
+    new_categ: "add category"
+
+
+  logged_off_page:
+    must_be: "you must be"
+    connected: "connected"
+    to_acces: "to acces the features of this website"
+
+  header:
+    sign_up: "sign up"
+    sign_in: "sign in"
+    log_out: "log out"
+    my_account: "my account"
+
+  breadcrumbs:
+    admin_dashboard: "admin dashboard"
+    intermediary_dashboard: "intermediary dashboard"
+    manager_dashboard: "manager dashboard"
+    home: "home"
+    new: "new"
+    contracts: "contracts"
+    user_profile: "user profile"
+    user_edition: "profile edition"
+    
+    
+  page_switcher:
+    next: "next"
+    previous: "previous"
+    show: "show"
+    to: "to"
+    onn: "on"
+    entries: "entries"
+
+  contracts:
+    admin_contracts: "all contracts"
+    my_contracts: "my contracts"
+    choose_category: "choose a category"
+    choose_lead: "choose a lead"
+    choose_value: "value of contract"
+    choose_comm: "commission intermediary"
+    choose_comment: "comment"
+    category: "category"
+    create_contract: "create contract"
+
+    table:
+      yess: "yes"
+      non: "no"
+      manager: "manager"
+      lead: "lead"
+      intermediary: "intermediary"
+      type: "type"
+      total: "total"
+      commission: "commission"
+      region: "region"
+      valid: "valid"
+      claimed: "claimed"
+      claim: "claim"
+      validate: "validate"
+      paid: "paid"
+      pay: "pay"
+      profits: "profits"
+      total_received: "total received"
+      pending_profits: "pending profits"
+      total_commission: "total of all comissions"
+      total_contrats: "value of all contracts"
+  
+    geoloca:
+      localisation: "localisation of"
+
+  actions:
+      email:
+        new_msg_to: "new message to"
+        recipient: "recipient"
+        message: "message"
+        close: "close"
+        send: "send"
+        create: "create"
+        edit: "edit"
+        delete: "delete"
+        add: "add"
+        save: "save"
+      
+      search:
+        search_by: "search by"
+        contains: "contains"
+        search: "search"
