@@ -108,8 +108,7 @@ This is an example of how to install all the things you need to use the software
    
    to
    
-   
-    ```sh
+
    app/views/layouts/_header.html.erb
 
             <a class="btn btn-primary  rounded-pill"
