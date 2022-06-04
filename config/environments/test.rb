@@ -58,7 +58,6 @@
 #   # config.action_view.annotate_rendered_view_with_filenames = true
 # end
 
-
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -76,11 +75,11 @@ Rails.application.configure do
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = {
-    'Cache-Control' => "public, max-age=#{1.hour.to_i}"
+    "Cache-Control" => "public, max-age=#{1.hour.to_i}",
   }
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
 
   # Raise exceptions instead of rendering exception templates.
@@ -104,4 +103,18 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default_url_options = { :host => "monlead.herokuapp.com" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.mailgun.org",
+    port: 587,
+    # domain: "mail.google.com",
+    user_name: ENV["MAILGUN_USER"],
+    password: ENV["MAILGUN_PASSWORD"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+  }
 end
