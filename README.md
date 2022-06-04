@@ -93,7 +93,7 @@ This is an example of how to install all the things you need to use the software
    
  !!WARNING!! To try the loggin system in a local environement you will have to change two values in the header partial to point at the 127.0.0.1:3000 domain instead of the Heroku server. Also, the callback URL in the AWS cognito hosted UI will have to be changed to monlead.herokuapp.com to 127.0.0.1:3000
  
-
+  ```sh
    app/views/layouts/_header.html.erb
 
             <a class="btn btn-primary  rounded-pill"
@@ -103,7 +103,7 @@ This is an example of how to install all the things you need to use the software
             <a class="btn btn-link  rounded-pill"
 		href="https://userandsocials.auth.eu-west-3.amazoncognito.com/signup?response_type=code&client_id=1vibkotm8fqugn9v086iltn8a5&redirect_uri=https://monlead.herokuapp.com/auth/sign_in"
 							role="button"><%= t('header.sign_up').capitalize %></a>
-```
+	```
    
    to
    
