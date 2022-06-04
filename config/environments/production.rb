@@ -75,6 +75,16 @@ Rails.application.configure do
     enable_starttls_auto: true,
   }
 
+  ActionMailer::Base.smtp_settings = {
+    :port => 587,
+    :address => "smtp.mailgun.org",
+    :user_name => ENV["MAILGUN_USER"],
+    :password => ENV["MAILGUN_PASSWORD"],
+    :domain => "monlead.herokuapp.com",
+    :authentication => :plain,
+  }
+  ActionMailer::Base.delivery_method = :smtp
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
