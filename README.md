@@ -26,7 +26,7 @@ Here are the instructions to build this project.
 
 This is an example of how to install all the things you need to use the software and how to install them.
 
-1. Install Ruby.
+1. Install Ruby (ruby 3.1.1).
 
   ```sh
   https://www.ruby-lang.org/fr/documentation/installation/#installers
@@ -64,6 +64,19 @@ This is an example of how to install all the things you need to use the software
    AWS_ACCESS_KEY_ID: "YOUR_KEY_ID"
    AWS_SECRET_ACCESS_KEY: "YOUR_ACCESS_KEY"
    AWS_REGION: "YOUR_REGION"
+   
+   AWS_COGNITO_APP_CLIENT_ID: "YOUR_AWS_COGNITO_APP_CLIENT_ID"
+   AWS_COGNITO_APP_CLIENT_SECRET: "YOUR_AWS_COGNITO_APP_CLIENT_SECRET"
+   AWS_COGNITO_DOMAIN: "YOUR_AWS_COGNITO_DOMAIN"
+   AWS_COGNITO_POOL_ID: "YOUR_AWS_COGNITO_POOL_ID"
+   AWS_COGNITO_REGION: "YOUR_AWS_COGNITO_REGION"
+   
+   MAILGUN_SMTP_LOGIN: "YOUR_MAILGUN_SMTP_LOGIN"
+   MAILGUN_SMTP_PASSWORD: "YOUR_MAILGUN_SMTP_PASSWORD"
+   
+   MAPBOX_ACCES_KEY: "YOUR_MAPBOX_ACCES_KEY"
+
+
    ```
    
 5. Create public dependencies and manifest file with:
