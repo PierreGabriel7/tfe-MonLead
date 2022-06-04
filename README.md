@@ -85,10 +85,10 @@ This is an example of how to install all the things you need to use the software
    bundle exec rails webpacker:install -a
    ```
 
-6. Start local server with:
+6. Start local server with local https support with:
 
    ```sh
-   rails s
+   rails s -b 'ssl://127.0.0.1:3000?key=localhost.key&cert=localhost.crt'
    ```
 
 
