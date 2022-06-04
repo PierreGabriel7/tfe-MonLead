@@ -107,8 +107,9 @@ This is an example of how to install all the things you need to use the software
    
    to
    
- 	```sh
-   app/views/layouts/_header.html.erb
+   
+   ```sh
+   	app/views/layouts/_header.html.erb
 
             <a class="btn btn-primary  rounded-pill"
 		href="https://userandsocials.auth.eu-west-3.amazoncognito.com/login?response_type=code&client_id=1vibkotm8fqugn9v086iltn8a5&redirect_uri=https://127.0.0.1:3000/auth/sign_in"
