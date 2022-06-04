@@ -91,21 +91,19 @@ This is an example of how to install all the things you need to use the software
    rails s -b 'ssl://127.0.0.1:3000?key=localhost.key&cert=localhost.crt'
    ```
    
- !!WARNING!! To try the loggin system in a local environement you will have to change two values in the header partial to point at the 127.0.0.1:3000 domain instead of the Heroku server. 
+ !!WARNING!! To try the loggin system in a local environement you will have to change two values in the header partial to point at the 127.0.0.1:3000 domain instead of the Heroku server. Also, the callback URL in the AWS cognito hosted UI will have to be changed to monlead.herokuapp.com to 127.0.0.1:3000
  
   ```sh
    app/views/layouts
-    <li class="dropdown pc-h-item">
-            <%= image_tag'user-solid.svg',id:'no-default-link',alt: 'user-image', class: 'user-avtar cst-default-avatar'%>
+
             <a class="btn btn-primary  rounded-pill"
 							href="https://userandsocials.auth.eu-west-3.amazoncognito.com/login?response_type=code&client_id=1vibkotm8fqugn9v086iltn8a5&redirect_uri=https://monlead.herokuapp.com/auth/sign_in"
 							role="button"><%= t('header.sign_in').capitalize %></a>
-          </li>
-          <li class="dropdown pc-h-item">
+
             <a class="btn btn-link  rounded-pill"
 							href="https://userandsocials.auth.eu-west-3.amazoncognito.com/signup?response_type=code&client_id=1vibkotm8fqugn9v086iltn8a5&redirect_uri=https://monlead.herokuapp.com/auth/sign_in"
 							role="button"><%= t('header.sign_up').capitalize %></a>
-          </li>
+
    ```
    
    to
