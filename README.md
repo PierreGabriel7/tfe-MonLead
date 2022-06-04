@@ -103,12 +103,14 @@ This is an example of how to install all the things you need to use the software
             <a class="btn btn-link  rounded-pill"
 		href="https://userandsocials.auth.eu-west-3.amazoncognito.com/signup?response_type=code&client_id=1vibkotm8fqugn9v086iltn8a5&redirect_uri=https://monlead.herokuapp.com/auth/sign_in"
 							role="button"><%= t('header.sign_up').capitalize %></a>
+							
 	```
    
    to
    
    
    ```sh
+   
    	app/views/layouts/_header.html.erb
 
             <a class="btn btn-primary  rounded-pill"
